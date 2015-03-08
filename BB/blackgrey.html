@@ -1,133 +1,128 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<!--Copyright 2011 by OcularCandyProductions-->
-<!--Created for Black Butterfy Productions--><!--modified 7/27/11--><!--begin header with title information, link to style sheet, and meta-tag-->
-<script type="text/javascript" src="jquery-1.2.6.min.js"></script> 
-<script type="text/javascript" src="jquery.galleria.js"></script> 
-<script type="text/javascript"> 
-jQuery(function($) { 
+<!--Copyright 2015 by Ocular Candy Productions-->
+<!--Created for Black Butterfy Productions-->
+<!--modified 03/07/2015 -->
+<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="jquery.galleria.js"></script>
+<script type="text/javascript">
+jQuery(function($) {
 
 $('ul.gallery').galleria({
-			history   : true, // activates the history object for bookmarking, back-button etc.
-			clickNext : true, // helper for making the image clickable
-			insert    : '#main_image', // the containing selector for our main image
-			onImage   : function(image,caption,thumb) { // let's add some image effects for demonstration purposes
-				
-				// fade in the image and caption
-				if(! ($.browser.mozilla && navigator.appVersion.indexOf("Win")!=-1) ) { // FF/Win fades large images terribly slow
-					image.css('display','none').fadeIn(1000);
-				}
-				caption.css('display','none').fadeIn(600);
-				
-				// fetch the thumbnail container
-				var _li = thumb.parents('li');
-				
-				// fade out inactive thumbnail
-				_li.siblings().children('img.selected').fadeTo(500,0.3);
-				
-				// fade in active thumbnail
-				thumb.fadeTo('fast',1).addClass('selected');
-				
-				// add a title for the clickable image
-				image.attr('title','Next image >>');
-			},
-			onThumb : function(thumb) { // thumbnail effects goes here
-				
-				// fetch the thumbnail container
-				var _li = thumb.parents('li');
-				
-				// if thumbnail is active, fade all the way.
-				var _fadeTo = _li.is('.active') ? '1' : '0.3';
-				
-				// fade in the thumbnail when finnished loading
-				thumb.css({display:'none',opacity:_fadeTo}).fadeIn(1000);
-				
-				// hover effects
-				thumb.hover(
-					function() { thumb.fadeTo('fast',1); },
-					function() { _li.not('.active').children('img').fadeTo('fast',0.3); } // don't fade out if the parent is active
-				)
-			}
-		});
-}); 
+      history   : true, // activates the history object for bookmarking, back-button etc.
+      clickNext : true, // helper for making the image clickable
+      insert    : '#main_image', // the containing selector for our main image
+      onImage   : function(image,caption,thumb) { // let's add some image effects for demonstration purposes
+
+        // fade in the image and caption
+        if(! ($.browser.mozilla && navigator.appVersion.indexOf("Win")!=-1) ) { // FF/Win fades large images terribly slow
+          image.css('display','none').fadeIn(1000);
+        }
+        caption.css('display','none').fadeIn(600);
+
+        // fetch the thumbnail container
+        var _li = thumb.parents('li');
+
+        // fade out inactive thumbnail
+        _li.siblings().children('img.selected').fadeTo(500,0.3);
+
+        // fade in active thumbnail
+        thumb.fadeTo('fast',1).addClass('selected');
+
+        // add a title for the clickable image
+        image.attr('title','Next image >>');
+      },
+      onThumb : function(thumb) { // thumbnail effects goes here
+
+        // fetch the thumbnail container
+        var _li = thumb.parents('li');
+
+        // if thumbnail is active, fade all the way.
+        var _fadeTo = _li.is('.active') ? '1' : '0.3';
+
+        // fade in the thumbnail when finnished loading
+        thumb.css({display:'none',opacity:_fadeTo}).fadeIn(1000);
+
+        // hover effects
+        thumb.hover(
+          function() { thumb.fadeTo('fast',1); },
+          function() { _li.not('.active').children('img').fadeTo('fast',0.3); } // don't fade out if the parent is active
+        )
+      }
+    });
+});
 </script>
 <style media="screen,projection" type="text/css">
-/* BEGIN DEMO STYLE */
-	.gallery li{width:80px;height:60px;border:3px double #111;margin: 0 2px;background:#000; float:left;}
-	.gallery {width:300px;}
+  .gallery li{width:80px;height:60px;border:3px double #111;margin: 0 2px;background:#000; float:left;}
+  .gallery {width:300px;}
 </style>
   <title>Black Butterfly Productions</title>
-	<link rel="stylesheet" href="css/screenstyle.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/printstyle.css" type="text/css" media="print" />
-	<link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="css/text.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="css/960.css" />
-	<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
-	<link href="css/galleria.css" rel="stylesheet" type="text/css" media="screen" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="author" content="Amber Hayes" />
-	<meta name="revised" content="07/27/2011" />
-	<meta name="description" content="Black Butterfly Productions specialized in custom quality tattoos and paintings.  Located in Midwest City, Oklahoma." />
-	<meta name="keywords" content="tattoo custom black butterfly productions painting piercing oklahoma" />
+  <link rel="stylesheet" href="css/screenstyle.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/printstyle.css" type="text/css" media="print" />
+  <link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="css/text.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="css/960.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+  <link href="css/galleria.css" rel="stylesheet" type="text/css" media="screen" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Amber Hayes" />
+  <meta name="revised" content="03/07/2015" />
+  <meta name="description" content="Black Butterfly Productions specializes in custom quality tattoos and body piercings.  Located in Midwest City, Oklahoma." />
+  <meta name="keywords" content="tattoo custom black butterfly productions painting piercing oklahoma artist quality" />
 </head>
-
 <body><!--begin body-->
-	<div id="container">
-		<div id="logo"><!--start #logo, contains Black Butterfly Logo logo-->
-		<h1>Black Butterfly Productions<br /></h1>
-	</div><!--end #logo-->
-	<div id="navbar"> 
-	  <ul> 
-			<li><a href="index.html">Home</a></li> 
-			<li><a href="color.html">Color</a></li> 
-			<li><a href="#">Black &amp; Grey</a></li> 
-			<li><a href="paintings.html">Paintings</a></li> 
-			<li><a href="shop.html">The Shop</a></li>
-			<li><a href="contact.html">Contact</a></li>
-	  </ul> 
-	</div> 
-	<div id="leftcolumn">
-		<ul>
-			<li><a href="index.html">Home</a></li> 
-			<li><a href="color.html">Color</a></li> 
-			<li><a href="#">Black &amp; Grey</a></li> 
-			<li><a href="paintings.html">Paintings</a></li> 
-			<li><a href="shop.html">The Shop</a></li>
-			<li><a href="contact.html">Contact</a></li>
-		</ul>
-	</div><!--end #leftcolumn-->
-
-	<div id="content"><!--begin right column containing page content-->
-		<div class="container_12">
-			<div class="grid_4">    
-				<ul class="gallery"> 
-					<li class="active"><img src="./images/blackgrey/BenHFlower.jpg" title="" alt="1" /></li> 
-					<li><img src="./images/blackgrey/CrossRibs.jpg" title="" alt="2" /></li> 
-					<li><img src="./images/blackgrey/FatherSon.jpg" title="" alt="3" /></li> 
-					<li><img src="./images/blackgrey/FreedomScript.jpg" title="" alt="4" /></li> 
-					<li><img src="./images/blackgrey/PenguinLove.jpg" title="" alt="5" /></li> 
-					<li><img src="./images/blackgrey/PICT0869.jpg" title="" alt="6" /></li> 
-					<li><img src="./images/blackgrey/ThisIsHope.jpg" title="" alt="7" /></li> 
-					<li><img src="./images/blackgrey/USMCHellHound.jpg" title="" alt="8" /></li>
-				</ul>
-        
-	</div><!-- end .grid_4 -->
-	<div class="grid_8">
-			<div id="main_image"></div>
-	</div>
+  <div id="container">
+    <div id="logo"><!--start #logo, contains Black Butterfly Logo logo-->
+      <h1>Black Butterfly Productions<br /></h1>
+    </div><!--end #logo-->
+    <div id="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="color.html">Color</a></li>
+        <li><a href="#">Black &amp; Grey</a></li>
+        <li><a href="paintings.html">Paintings</a></li>
+        <li><a href="shop.html">The Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-   
-	
-	</div><!--end #content right cloumn-->
-	<div id="footer"><!--copyright and contact information--> 
-		Copyright&nbsp;&copy;&nbsp;2011&nbsp;Black	Butterfly Productions&nbsp;<br />7019 SE 15th St
-		&nbsp;&nbsp;Midwest City, Oklahoma 73110&nbsp;<br />
-		Phone: 405-202-7408 &nbsp;&nbsp;Email:&nbsp;<a href="mailto:chucky@blackbutterfly.biz">chucky@blackbutterfly.biz</a>&nbsp;
-		<div id="disclaim">
-		<br />Date last revised: November 28, 2014&nbsp;&nbsp;Please contact webmaster directly with questions/comments concerning the website. <a href="mailto:amber@ocularcandy.biz">amber@ocularcandy.biz</a>
-		</div><!--end #disclaim-->
-	</div><!--end #footer--> 
-</div><!--end #container-->
+    <div id="leftcolumn">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="color.html">Color</a></li>
+        <li><a href="#">Black &amp; Grey</a></li>
+        <li><a href="paintings.html">Paintings</a></li>
+        <li><a href="shop.html">The Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div><!--end #leftcolumn-->
+    <div id="content"><!--begin right column containing page content-->
+      <div class="container_12">
+        <div class="grid_4">
+          <ul class="gallery">
+            <li class="active"><img src="./images/blackgrey/BenHFlower.jpg" title="" alt="1" /></li>
+            <li><img src="./images/blackgrey/CrossRibs.jpg" title="" alt="2" /></li>
+            <li><img src="./images/blackgrey/FatherSon.jpg" title="" alt="3" /></li>
+            <li><img src="./images/blackgrey/FreedomScript.jpg" title="" alt="4" /></li>
+            <li><img src="./images/blackgrey/PenguinLove.jpg" title="" alt="5" /></li>
+            <li><img src="./images/blackgrey/PICT0869.jpg" title="" alt="6" /></li>
+            <li><img src="./images/blackgrey/ThisIsHope.jpg" title="" alt="7" /></li>
+            <li><img src="./images/blackgrey/USMCHellHound.jpg" title="" alt="8" /></li>
+          </ul>
+        </div><!-- end .grid_4 -->
+        <div class="grid_8">
+            <div id="main_image"></div>
+        </div><!--end .grid_8 -->
+      </div><!--end container_12-->
+    </div><!--end #content right cloumn-->
+    <div id="footer"><!--copyright and contact information-->
+      Copyright&nbsp;&copy;&nbsp;2015&nbsp;Black  Butterfly Productions&nbsp;<br />7019 SE 15th St
+      &nbsp;&nbsp;Midwest City, Oklahoma 73110&nbsp;<br />
+      Phone: 405-202-7408 &nbsp;&nbsp;Email:&nbsp;<a href="mailto:chucky@blackbutterfly.biz">chucky@blackbutterfly.biz</a>&nbsp;
+      <div id="disclaim">
+      <br />Date last revised: March 07, 2015&nbsp;&nbsp;Please contact webmaster directly with questions/comments concerning the website. <a href="mailto:amber@ocularcandy.biz">amber@ocularcandy.biz</a>
+      </div><!--end #disclaim-->
+    </div><!--end #footer-->
+  </div><!--end #container-->
 </body><!--end body-->
 </html>
